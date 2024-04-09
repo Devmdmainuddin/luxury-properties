@@ -76,8 +76,10 @@ const Header = () => {
 
                 </ul>
                 <div className=" hidden  lg:flex items-center gap-x-3">
-                <CiHeart className="text-2xl hover:text-cyan-700"></CiHeart>
-                <BsCartCheck className="text-2xl hover:text-cyan-700"></BsCartCheck>
+                    <NavLink to='/wishlistitems'><CiHeart className={({ isActive }) => (isActive ? 'active' : 'default text-2xl hover:text-cyan-700')} ></CiHeart></NavLink>
+                    <NavLink to='/cartitems'><BsCartCheck className={({ isActive }) => (isActive ? 'active' : 'default text-2xl hover:text-cyan-700')} ></BsCartCheck></NavLink>
+                
+                
                     {
                         user? <div className="dropdown dropdown-end">
                             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">

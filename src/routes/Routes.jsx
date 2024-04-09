@@ -9,6 +9,8 @@ import PrivateRoute from '../routes/PrivateRoute';
 import About from "../pages/About";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import ProperticeDetails from "../pages/ProperticeDetails";
+import CartItems from "../pages/CartItems";
+import WishlishItems from "../pages/WishlishItems";
 
 const router = createBrowserRouter([
     {
@@ -44,6 +46,14 @@ const router = createBrowserRouter([
             {
                 path: '/updateProfile',
                 element: <PrivateRoute><UpdateProfile></UpdateProfile></PrivateRoute>
+            },
+            {
+                path: '/cartitems',
+                element: <PrivateRoute><CartItems></CartItems></PrivateRoute>
+            },
+            {
+                path: '/wishlistitems',
+                element: <PrivateRoute><WishlishItems></WishlishItems></PrivateRoute>
             }
         ]
     }    
