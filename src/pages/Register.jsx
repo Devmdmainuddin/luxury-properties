@@ -4,6 +4,7 @@ import { AuthContext } from "../providers/AuthProvider";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Link, useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
 	// const {createUser,setloader} = useContext(AuthContext)
@@ -119,6 +120,9 @@ const Register = () => {
 
 	return (
 		<div className="flex mt-8 flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-50 text-gray-800 mx-auto">
+			<Helmet>
+             <title>Luxury Properties | Register </title>
+             </Helmet>
 			<div className="mb-8 text-center">
 				<h1 className="my-3 text-4xl font-bold">Sign up</h1>
 				<p className="text-sm text-gray-600">Sign in to access your account</p>

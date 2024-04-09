@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { PropertiesComponents } from "../providers/ContextComponent";
 import { FaMinus } from "react-icons/fa";
 import { FaPlus } from "react-icons/fa";
+import { Helmet } from "react-helmet-async";
 const ProperticeDetails = () => {
     const { id } = useParams();
     const { Properties } = useContext(PropertiesComponents)
@@ -11,6 +12,9 @@ const ProperticeDetails = () => {
     data.push(Propertie)
     return (
         <div className="max-w-[1170px] mx-auto md:px-24 lg:px-8">
+          <Helmet>
+             <title>Luxury Properties | Propertic details </title>
+             </Helmet>
             <div className="container pb-10">
                 <p className="font-Josefin text-xs text-gray-500">Home - Products</p>
             </div>
@@ -18,7 +22,7 @@ const ProperticeDetails = () => {
     data.map((item,idx) =><div key={idx} className="container flex flex-col md:flex-row justify-between gap-x-6 items-center">
     <div className="w-1/2 h-[450px]">
         <img
-            className="w-full  object-contain"
+            className="w-full max-h-full object-contain"
             src={item.image}
             alt=""
         />
@@ -68,6 +72,14 @@ const ProperticeDetails = () => {
                 <p className="font-semibold">Description : </p>
                 <p className="p-2">{item.description}</p>
               </li>
+             
+              <li className="font-semibold mr-2  ">facilities : 
+              {
+                 item.facilities.map((facilities,idx)=><li key={idx} className="ml-6"> { facilities}</li>)
+              }
+              
+              
+              </li>
               <li className="flex items-center gap-x-2">
                 <button className="py-2 px-4 bg-[#0a2623] text-gray-300 border border-[#0a2623] hover:bg-transparent hover:text-[#0a2623] transition-all duration-300">
                   Add to Wish List
@@ -75,13 +87,6 @@ const ProperticeDetails = () => {
                 <button  className="py-2 px-4 bg-[#0a2623] text-gray-300 border border-[#0a2623] hover:bg-transparent hover:text-[#0a2623] transition-all duration-300">
                   Add to Cart
                 </button>
-              </li>
-              <li className="font-semibold mr-2  ">facilities : 
-              {
-                 item.facilities.map((facilities,idx)=><li key={idx} className="ml-6"> { facilities}</li>)
-              }
-              
-              
               </li>
               
               <li className="font-semibold">Add a Review : </li>

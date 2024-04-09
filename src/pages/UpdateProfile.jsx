@@ -4,6 +4,7 @@ import { AuthContext } from "../providers/AuthProvider";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Helmet } from "react-helmet-async";
 
 const UpdateProfile = () => {
     const { user, updateUserProfile, setloader } = useContext(AuthContext)
@@ -55,8 +56,10 @@ const UpdateProfile = () => {
 
     return (
         <div className="flex flex-col md:flex-row gap-x-6 justify-between my-6">
-         
-            <div className="flex flex-col justify-center  p-6 shadow-md rounded-xl sm:px-12 h-auto bg-gray-50 text-gray-800">
+         <Helmet>
+             <title>Luxury Properties | UpdateProfile </title>
+             </Helmet>
+            <div className="animate__animated animate__fadeInLeft flex flex-col justify-center  p-6 shadow-md rounded-xl sm:px-12 h-auto bg-gray-50 text-gray-800">
                 <img src={user.photoURL} alt="" className="w-32 h-32 mx-auto rounded-full bg-gray-500 aspect-square" />
                 <div className="space-y-4 text-center divide-y divide-gray-700">
                     <div className="my-2 space-y-1">
@@ -88,7 +91,7 @@ const UpdateProfile = () => {
                 </div>
             </div>
         
-            <div className="flex  flex-col w-[800px] p-6 rounded-md sm:p-10 bg-gray-50 text-gray-800 mx-auto">
+            <div className="animate__animated animate__fadeInRight flex  flex-col w-[800px] p-6 rounded-md sm:p-10 bg-gray-50 text-gray-800 mx-auto">
                 <div className="mb-8 text-center">
                     <h1 className="my-3 text-4xl font-bold">Update Profile</h1>
 

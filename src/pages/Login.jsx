@@ -6,6 +6,7 @@ import { AuthContext } from "../providers/AuthProvider";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { IoMdEyeOff } from "react-icons/io";
 import { FaEye } from "react-icons/fa";
+import { Helmet } from "react-helmet-async";
 
 
 const Login = () => {
@@ -37,28 +38,7 @@ const Login = () => {
 						})
 	};
 
-	// const handlelogin = e => {
-	// 	e.preventDefault();
-
-	// 	const email = e.target.email.value;
-	// 	const password = e.target.password.value;
-	// 	signInUser(email, password)
-	// 		.then(result => {
-	// 			const emaillooginuser = result.user;
-	// 			toast.success('user login successfully')
-	// 			console.log(emaillooginuser);
-	// 			e.target.reset()
-	// 			navigate('/')
-	// 		})
-	// 		.catch(error => {
-	// 			setloader(false)
-	// 			toast.error(error.message)
-	// 			console.log('error', error.message)
-	// 		})
-
-
-
-	// }
+	
 	const handleSocialLogin = (socialProvider) => {
 		socialProvider().then((result) => {
 			if (result.user) {
@@ -68,6 +48,9 @@ const Login = () => {
 	};
 	return (
 		<div className="w-full mt-8 mx-auto max-w-md p-8 space-y-3 rounded-xl bg-gray-50 text-gray-100">
+			<Helmet>
+             <title>Luxury Properties | login </title>
+             </Helmet>
 			<h1 className="text-2xl font-bold text-center">Login</h1>
 
 			<form onSubmit={handleSubmit(onSubmit)} className="space-y-6">

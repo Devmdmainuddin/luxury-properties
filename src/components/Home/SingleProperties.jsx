@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const SingleProperties = ({propertie}) => {
     const {id,title,image,price,location,status,category,area}= propertie;
     return (
-        <div className="border border-[#c6f1ef] rounded-lg">
+        <div className="animate__animated animate__fadeInRight border border-[#c6f1ef] rounded-lg">
                     <div className="rounded-lg w-full h-72  relative overflow-hidden flex justify-center items-center">
                     <span className="z-10 absolute top-3 left-3 py-2 px-3 text-white bg-orange-500 rounded-lg"> {status}</span>
                         <img

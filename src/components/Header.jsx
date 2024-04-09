@@ -1,9 +1,12 @@
 import { Link, NavLink } from "react-router-dom";
 import { RiMenu2Line } from "react-icons/ri";
 import { IoMdCloseCircleOutline } from "react-icons/io";
+import { BsCartCheck } from "react-icons/bs";
+import { CiHeart } from "react-icons/ci";
 // import { IoPersonOutline } from "react-icons/io5";
 import { useContext, useState } from "react";
 import { AuthContext } from "../providers/AuthProvider";
+import '../App.css'
 const Header = () => {
     const { user, logOut } = useContext(AuthContext)
     const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -72,8 +75,9 @@ const Header = () => {
                     
 
                 </ul>
-                <div className=" hidden  lg:inline-block">
-
+                <div className=" hidden  lg:flex items-center gap-x-3">
+                <CiHeart className="text-2xl hover:text-cyan-700"></CiHeart>
+                <BsCartCheck className="text-2xl hover:text-cyan-700"></BsCartCheck>
                     {
                         user? <div className="dropdown dropdown-end">
                             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
@@ -113,6 +117,7 @@ const Header = () => {
                             </div>
                             
                     }
+                    
                 </div>
 
 
