@@ -35,7 +35,7 @@ const SingleProperties = ({propertie}) => {
                                 <h3 className="text-[16px] font-semibold">{area}</h3>
                             </div>
                         </div>
-                        <Link to={`/propertices/${id}`}> <button className="w-full bg-[#6df0d6] py-2">show details</button></Link>
+                        <Link to={`/propertices/${parseInt(id)}`}> <button className="w-full bg-[#6df0d6] py-2">show details</button></Link>
                        
 
                     </div>
