@@ -4,27 +4,28 @@ import { PropertiesComponents } from "../providers/ContextComponent";
 import { FaMinus } from "react-icons/fa";
 import { FaPlus } from "react-icons/fa";
 import { Helmet } from "react-helmet-async";
-import { saveStoreData, savewishlistData } from "../utility/localstorage";
+// import { saveStoreData, savewishlistData } from "../utility/localstorage";
 import { ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 const ProperticeDetails = () => {
+
   const { id } = useParams();
-  const { Properties } = useContext(PropertiesComponents)
+  const { Properties,handlAddToCart,handalAddToWishlist } = useContext(PropertiesComponents)
   const Propertie = Properties.find(product => product.id === parseInt(id))
   let data = []
   data.push(Propertie)
 
-  const handlAddToCart = () => {
-    if (Propertie) {
-      saveStoreData(parseInt(id))
-    }
+  // const handlAddToCart = () => {
+  //   if (Propertie) {
+  //     saveStoreData(parseInt(id))
+  //   }
 
-  }
-  const handalAddToWishlist = () => {
-    if (Propertie) {
-      savewishlistData(parseInt(id))
-    }
-  }
+  // }
+  // const handalAddToWishlist = () => {
+  //   if (Propertie) {
+  //     savewishlistData(parseInt(id))
+  //   }
+  // }
 
 
   return (
@@ -98,10 +99,10 @@ const ProperticeDetails = () => {
 
               </li>
               <li className="flex items-center gap-x-2">
-                <button onClick={handlAddToCart} className="py-2 px-4 bg-[#0a2623] text-gray-300 border border-[#0a2623] hover:bg-transparent hover:text-[#0a2623] transition-all duration-300">
+                <button onClick={()=>handalAddToWishlist(item.id)} className="py-2 px-4 bg-[#0a2623] text-gray-300 border border-[#0a2623] hover:bg-transparent hover:text-[#0a2623] transition-all duration-300">
                   Add to Wish List
                 </button>
-                <button onClick={handalAddToWishlist} className="py-2 px-4 bg-[#0a2623] text-gray-300 border border-[#0a2623] hover:bg-transparent hover:text-[#0a2623] transition-all duration-300">
+                <button onClick={()=>handlAddToCart(item.id)} className="py-2 px-4 bg-[#0a2623] text-gray-300 border border-[#0a2623] hover:bg-transparent hover:text-[#0a2623] transition-all duration-300">
                   Add to Cart
                 </button>
               </li>

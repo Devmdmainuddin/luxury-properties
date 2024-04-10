@@ -7,7 +7,14 @@ import { CiHeart } from "react-icons/ci";
 import { useContext, useState } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import '../App.css'
+import { PropertiesComponents } from "../providers/ContextComponent";
+
+
+
+
+
 const Header = () => {
+    const {wishlist,items}=useContext(PropertiesComponents)
     const { user, logOut } = useContext(AuthContext)
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const handlelogOut = () => {
@@ -76,8 +83,11 @@ const Header = () => {
 
                 </ul>
                 <div className=" hidden  lg:flex items-center gap-x-3">
-                    <NavLink to='/wishlistitems'><CiHeart className={({ isActive }) => (isActive ? 'active' : 'default text-2xl hover:text-cyan-700')} ></CiHeart></NavLink>
-                    <NavLink to='/cartitems'><BsCartCheck className={({ isActive }) => (isActive ? 'active' : 'default text-2xl hover:text-cyan-700')} ></BsCartCheck></NavLink>
+                    <div className="relative"><NavLink to='/wishlistitems'><CiHeart className={({ isActive }) => (isActive ? 'active' : 'default text-2xl hover:text-cyan-700 ')} ></CiHeart><span className="absolute -top-3 -right-2">{wishlist.length?wishlist.length: '0'}</span></NavLink></div>
+                    <div className="relative">
+                    <NavLink to='/cartitems'><BsCartCheck className={({ isActive }) => (isActive ? 'active' : 'default text-2xl hover:text-cyan-700')} ></BsCartCheck><span className="absolute -top-3 -right-2">{items.length?items.length: '0'}</span></NavLink>
+                    </div>
+                    
                 
                 
                     {
