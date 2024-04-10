@@ -3,6 +3,8 @@ import { PropertiesComponents } from "../providers/ContextComponent";
 import { ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { BsCartCheck } from "react-icons/bs";
+import PropTypes from 'prop-types';
+
 
 const SingleWishlishItem = ({items}) => {
     const {handlAddToCart,removeishlist}= useContext(PropertiesComponents)
@@ -49,5 +51,7 @@ const SingleWishlishItem = ({items}) => {
                 </li>
     );
 };
-
+SingleWishlishItem.propTypes = {
+    items:PropTypes.object,
+}
 export default SingleWishlishItem;

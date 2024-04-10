@@ -5,7 +5,7 @@ const About = () => {
     return (
         <div className="max-w-[1170px] mx-auto md:px-24 lg:px-8">
             <Helmet>
-             <title>Luxury Properties | Contact </title>
+             <title>Luxury Properties | about  </title>
              </Helmet>
      
             <h2 className="text-center text-3xl font-bold animate__animated animate__fadeInLeft">Who we are</h2>

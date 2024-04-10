@@ -7,10 +7,9 @@ import { Link, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 
 const Register = () => {
-	// const {createUser,setloader} = useContext(AuthContext)
+	
 	const { createUser,updateUserProfile, setloader } = useContext(AuthContext)
-	// const [Error, setError] = useState('')
-	// const [emailError, setEmailError] = useState('')
+	
 
 
 
@@ -19,7 +18,7 @@ const Register = () => {
 		handleSubmit,
 		formState: { errors },
 	} = useForm();
-	// navigation systems
+	
 	const navigate = useNavigate();
 	const from = "/";
 
@@ -38,12 +37,7 @@ const Register = () => {
 			toast.error('password must have a capital letter')
 			return
 		}
-		// 	if (!/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}$/.test(password)) {
-		// 	toast.error('GGGGGGGGGGGGGG')
-		// 	return
-		// }
 		
-		//create user and update profile
 		createUser(email, password)
 			.then(() => {
 				updateUserProfile(fullName, image)
@@ -62,60 +56,6 @@ const Register = () => {
 	
 };
 
-
-	// const handleRegister = e => {
-	// 	e.preventDefault();
-	// 	const email = e.target.email.value;
-	// 	const password = e.target.password.value;
-	// 	const confirmpassword = e.target.confirmpassword.value
-	// 	console.log(email, password, confirmpassword)
-
-
-
-	// 	if (!/@gmail\.com$/.test(email)) {
-	// 		setEmailError('email must end with @gmail.com')
-	// 		toast.error('email must end with @gmail.com')
-	// 		return
-	// 	}
-
-	// 	if (password.length < 6) {
-	// 		setError('password must be 6 characters')
-	// 		toast.error('error.message')
-	// 		return
-	// 	}
-	// 	if (password !== confirmpassword) {
-	// 		setError("passwords didn't match")
-	// 		toast.error("passwords didn't match")
-	// 		return
-	// 	}
-
-	// 	if (!/[@#%^*]/.test(password)) {
-	// 		toast.error('please add a apecial character like @ ,#,%,^,&,*')
-	// 		return
-	// 	}
-	// 	if (!/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}$/.test(email)) {
-	// 		toast.error('GGGGGGGGGGGGGG')
-	// 		return
-	// 	}
-
-
-
-	// 	createUser(email, password)
-	// 		.then(result => {
-	// 			console.log(result.user)
-	// 			toast.success('user create successfully')
-	// 			e.target.reset()
-
-
-	// 		})
-	// 		.catch(error => {
-	// 			setloader(false)
-	// 			toast.error(error.message)
-	// 			console.log(error.message.split('/')[1])
-
-	// 		});
-
-	// }
 
 
 	return (
@@ -165,12 +105,7 @@ const Register = () => {
                 )}
 					</div>
 
-					{/* <div>
-						<div className="flex justify-between mb-2">
-							<label htmlFor="confirmpassword" className="text-sm">confirm password</label>
-						</div>
-						<input type="password" name="confirmpassword" id="confirmpassword" placeholder="*****" className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800" />
-					</div> */}
+					
 				</div>
 				<div className="space-y-2">
 					<div>

@@ -34,7 +34,7 @@ const Header = () => {
                 >
 
                     <span className='ml-2 text-xl font-bold tracking-wide text-gray-800 '>
-                        Luxury <span>Properties</span>
+                        Luxury <span className="text-orange-500">Properties</span>
                     </span>
                 </Link>
                 <ul className='items-center hidden gap-x-6 lg:flex'>

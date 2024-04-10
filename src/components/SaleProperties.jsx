@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
 
-const SingleProperties = ({propertie}) => {
+
+const SaleProperties = ({propertie}) => {
     const {id,title,image,price,location,status,category,area}= propertie;
     return (
-        <div className="animate__animated animate__fadeInRight border border-[#c6f1ef] rounded-lg">
-                    <div className="rounded-lg w-full h-72  relative overflow-hidden flex justify-center items-center">
-                    <span className="z-10 absolute top-3 left-3 py-2 px-3 text-white bg-orange-500 rounded-lg"> {status}</span>
+        <div className="animate__animated animate__fadeInRight flex justify-center items-center  ">
+                    <div className="rounded-lg  h-72 w-1/3 relative overflow-hidden flex justify-center items-center">
+                    <span className="z-10 absolute top-3 left-3 py-1 px-3 text-white bg-orange-500 rounded-lg"> {status}</span>
                         <img
                             className="w-full h-full object-cover hover:scale-110 transition-all duration-500 "
                             src={image}
@@ -15,7 +16,7 @@ const SingleProperties = ({propertie}) => {
                         
 
                     </div>
-                    <div className="text py-3 px-4 ">
+                    <div className="text py-3 px-4 bg-[#efefef] rounded-lg">
                         <h3 className="text-primery text-2xl font-semibold hover:text-hover transition-all duration-300">
                             {title}
                         </h3>
@@ -42,7 +43,7 @@ const SingleProperties = ({propertie}) => {
         </div>
     );
 };
-SingleProperties.propTypes = {
+SaleProperties.propTypes = {
     propertie:PropTypes.object,
 }
-export default SingleProperties;
+export default SaleProperties;

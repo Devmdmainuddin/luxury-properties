@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { PropertiesComponents } from "../providers/ContextComponent";
 import { ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import PropTypes from 'prop-types';
 
 const SingleCartItem = ({item}) => {
     const {handalAddToWishlist,removeFromCart}= useContext(PropertiesComponents)
@@ -50,5 +51,7 @@ const SingleCartItem = ({item}) => {
                 </li>
     );
 };
-
+SingleCartItem.propTypes = {
+    item:PropTypes.object,
+}
 export default SingleCartItem;

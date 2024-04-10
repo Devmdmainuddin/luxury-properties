@@ -17,8 +17,6 @@ const HeroSlider = () => {
       }}
       navigation={true}
       modules={[Navigation]}
-    //   onSlideChange={() => console.log('slide change')}
-    //   onSwiper={(swiper) => console.log(swiper)}
 
 
  

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
 
-const SingleProperties = ({propertie}) => {
+const TopProperties = ({propertie}) => {
     const {id,title,image,price,location,status,category,area}= propertie;
     return (
         <div className="animate__animated animate__fadeInRight border border-[#c6f1ef] rounded-lg">
@@ -42,7 +42,7 @@ const SingleProperties = ({propertie}) => {
         </div>
     );
 };
-SingleProperties.propTypes = {
+TopProperties.propTypes = {
     propertie:PropTypes.object,
 }
-export default SingleProperties;
+export default TopProperties;

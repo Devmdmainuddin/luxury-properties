@@ -8,9 +8,7 @@ import { Helmet } from "react-helmet-async";
 
 const CartItems = () => {
     const { Properties,items,setItems } =useContext(PropertiesComponents)
-    
-    console.log(items)
-
+  
 
 useEffect(()=>{
     const storedata = getStoreData();
@@ -19,7 +17,7 @@ useEffect(()=>{
   
         for (const id of storedata) {
             const item = Properties.find(p => p.id == id);
-         console.log(item)
+       
             if (item) {
                 storeitem.push(item)   
             }

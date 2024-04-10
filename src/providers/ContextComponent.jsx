@@ -4,6 +4,9 @@ import { saveStoreData, savewishlistData, removeFromData, removeFromwishlist } f
 export const PropertiesComponents = createContext()
 const ContextComponent = ({ children }) => {
   const [Properties, setproperties] = useState([])
+  const [topPropertie,setTopPropertie]= useState([])
+  const [rentPropertie,setRentPropertie]= useState([])
+  const [salePropertie,setSalePropertie]= useState([])
   const [items, setItems] = useState([]);
   const [wishlist, setwishlist] = useState([])
 
@@ -11,7 +14,16 @@ const ContextComponent = ({ children }) => {
   useEffect(() => {
     fetch('FakeData.json')
       .then((res) => res.json())
-      .then((data) => setproperties(data));
+      .then((data) => {setproperties(data)
+        const topProperties = [...data].sort((a, b) => b.price - a.price)
+        setTopPropertie(topProperties)
+        const Sale = [...data].filter(p=>p.status =='For Sale')
+        setSalePropertie(Sale)
+        const rent = [...data].filter(p=>p.status =='For Rent')
+        setRentPropertie(rent)
+        
+      })
+      
   }, [])
 
   const handlAddToCart = id => {
@@ -35,9 +47,6 @@ const ContextComponent = ({ children }) => {
 
     }
   }
-
-
-
   const removeishlist = (itemId) => {
     const remainingitem = wishlist.filter(item => item.id != itemId);
     setwishlist(remainingitem)
@@ -46,7 +55,7 @@ const ContextComponent = ({ children }) => {
 
 
   return (
-    <PropertiesComponents.Provider value={{ Properties, handlAddToCart, handalAddToWishlist, removeFromCart, removeishlist, items, setItems,wishlist, setwishlist }}>
+    <PropertiesComponents.Provider value={{ Properties,topPropertie,rentPropertie,salePropertie, handlAddToCart, handalAddToWishlist, removeFromCart, removeishlist, items, setItems,wishlist, setwishlist }}>
       {children}
     </PropertiesComponents.Provider>
   );

@@ -15,18 +15,7 @@ const ProperticeDetails = () => {
   let data = []
   data.push(Propertie)
 
-  // const handlAddToCart = () => {
-  //   if (Propertie) {
-  //     saveStoreData(parseInt(id))
-  //   }
-
-  // }
-  // const handalAddToWishlist = () => {
-  //   if (Propertie) {
-  //     savewishlistData(parseInt(id))
-  //   }
-  // }
-
+ 
 
   return (
     <div className="max-w-[1170px] mx-auto md:px-24 lg:px-8">

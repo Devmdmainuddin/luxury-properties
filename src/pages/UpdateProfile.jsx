@@ -8,10 +8,6 @@ import { Helmet } from "react-helmet-async";
 
 const UpdateProfile = () => {
     const { user, updateUserProfile, setloader } = useContext(AuthContext)
-    // const displayName = user.displayName;
-    // const email = user.email;
-    // const photoURL = user.photoURL;
-    // const emailVerified = user.emailVerified;
 
     const {
         register,
@@ -21,24 +17,10 @@ const UpdateProfile = () => {
     const navigate = useNavigate();
     const from = "/";
     const OnSubmit = (data) => {
-        const { image, fullName,email} = data;
-        // if (password.length < 6) {
-        //     toast.error('error.message')
-        //     return
-        // }
-        // if (!/[A-Z]/.test(password)) {
-        //     toast.error("password must have a  uppercase  letter")
-        //     return
-        // }
+        const { image, fullName, email } = data;
 
-        // if (!/[a-z]/.test(password)) {
-        //     toast.error('password must have a capital letter')
-        //     return
-        // }
 
-        //create user and update profile
-
-        updateUserProfile(fullName, image,email)
+        updateUserProfile(fullName, image, email)
             .then(() => {
                 navigate(from);
                 toast.success('user register successfully')
@@ -56,9 +38,9 @@ const UpdateProfile = () => {
 
     return (
         <div className="flex flex-col md:flex-row gap-x-6 justify-between my-6">
-         <Helmet>
-             <title>Luxury Properties | UpdateProfile </title>
-             </Helmet>
+            <Helmet>
+                <title>Luxury Properties | UpdateProfile </title>
+            </Helmet>
             <div className="animate__animated animate__fadeInLeft flex flex-col justify-center  p-6 shadow-md rounded-xl sm:px-12 h-auto bg-gray-50 text-gray-800">
                 <img src={user.photoURL} alt="" className="w-32 h-32 mx-auto rounded-full bg-gray-500 aspect-square" />
                 <div className="space-y-4 text-center divide-y divide-gray-700">
@@ -90,7 +72,7 @@ const UpdateProfile = () => {
                     </div>
                 </div>
             </div>
-        
+
             <div className="animate__animated animate__fadeInRight flex  flex-col w-[800px] p-6 rounded-md sm:p-10 bg-gray-50 text-gray-800 mx-auto">
                 <div className="mb-8 text-center">
                     <h1 className="my-3 text-4xl font-bold">Update Profile</h1>
@@ -108,14 +90,14 @@ const UpdateProfile = () => {
                             )}
                         </div>
                         <div>
-						<label htmlFor="email" className="block mb-2 text-sm">Email address</label>
-						<input type="email" name="email" id="email" placeholder={`${user?.email}`} className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800" 
-						{...register("email", { required: true })}
-						/>
-						{errors.email && (
-                  <span className="text-red-500">This field is required</span>
-                )}
-					</div>
+                            <label htmlFor="email" className="block mb-2 text-sm">Email address</label>
+                            <input type="email" name="email" id="email" placeholder={`${user?.email}`} className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800"
+                                {...register("email", { required: true })}
+                            />
+                            {errors.email && (
+                                <span className="text-red-500">This field is required</span>
+                            )}
+                        </div>
 
                         <div>
                             <label htmlFor="image" className="block mb-2 text-sm">Image Url</label>
