@@ -19,18 +19,18 @@ const Home = () => {
 
 
     return (
-        <div className="max-w-[1170px] mx-auto px-4 md:px-24 lg:px-8">
+        <div className="px-4 md:px-24 lg:px-8">
             <Helmet>
                 <title>Luxury Properties | Home </title>
             </Helmet>
-            <div>
+            <div className="Slider">
 
                 <HeroSlider></HeroSlider>
             </div>
             <div className="mt-[100px]">
                 <div className="title animate__animated animate__fadeInLeft text-center">
                     <h2 className="mx-auto text-3xl font-bold">Properties by Category</h2>
-                    <p className="mx-auto text-xl max-w-[2/3] mt-4">Highlight the best of your properties by using the List Category shortcode. You can list specific properties categories, types, cities, areas.</p>
+                    <p className="mx-auto text-xl  max-w-[650px] mt-4">Highlight the best of your properties by using the List Category shortcode. You can list specific properties categories, types, cities, areas.</p>
                 </div>
                 <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <div className=" animate__animated animate__fadeInLeft flex justify-center items-center flex-col bg-[#e5eff6] rounded-md py-12">
@@ -154,7 +154,7 @@ const Home = () => {
                     <h2 className="mx-auto text-3xl font-bold">Featured Properties</h2>
                     <p className="mx-auto text-xl max-w-[650px] mt-4">Here are two listings displayed with the featured property shortcode, which you can use when you have some special properties to present.</p>
                 </div>
-                <div className="mt-12 grid grid-cols-1 md:grid-cols-2  gap-6">
+                <div className="mt-[50px] grid grid-cols-1 md:grid-cols-2  gap-6">
                     {
                         salePropertie.map(propertie => <SaleProperties key={propertie.id} propertie={propertie}></SaleProperties>)
                     }
@@ -172,8 +172,7 @@ const Home = () => {
 
                 </div>
             </div>
-
-            <section className="my-[100px] text-gray-800 ">
+            <section className="my-[100px] Testimonials text-gray-800 ">
             <div className="title animate__animated animate__fadeInLeft  text-center">
                     <h2 className="mx-auto text-3xl font-bold">Testimonials</h2>
                     <p className="mx-auto text-xl max-w-[650px] mt-4">Publish the best of your client testimonials and let the world know what a great agent or real estate agency you are. Testimonials build trust..</p>

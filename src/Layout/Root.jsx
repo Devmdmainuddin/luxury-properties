@@ -19,10 +19,10 @@ const Root = () => {
 
     return (
         <div>
-            <div>
+            <div className="h-[91px]">
                 <Header></Header>
             </div>
-            <div>
+            <div className="md:min-h-[calc(100vh-419px)] max-w-[1170px] mx-auto">
                 <Outlet></Outlet>
             </div>
             <div>

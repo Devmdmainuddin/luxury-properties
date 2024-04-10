@@ -20,17 +20,26 @@ Install my-project with npm
 Insert gif or link to demo
 
 
+## Screenshots
+
+![](https://i.ibb.co/dKq24vD/Screenshot-2024-04-10-at-23-28-17-Luxury-Properties-Home.png)
+
+
 ## Appendix
 
 This project is used by the following components 
 
-- [firebase ](https://firebase.google.com/)
+- [swiper js](https://swiperjs.com/)
 - [react-hook-form](https://react-hook-form.com/)
+- [firebase ](https://firebase.google.com/)
+- [animate.css](https://animate.style/)
 - [react-icons](https://react-icons.github.io/react-icons/)
 - [react-router-dom](https://reactrouter.com/en/main) 
 - [react-toastify](https://www.npmjs.com/package/react-toastify)
 - [react-icons](https://react-icons.github.io/react-icons/)
-- [swiper js](https://swiperjs.com/)
+- [react-helmet-async]()
+
+
 
 ## Badges
 
