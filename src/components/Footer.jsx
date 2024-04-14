@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <footer>
-
-      <div className="max-w-[1170px] mx-auto px-4 md:px-24 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 py-12 bg-base-200 text-base-content">
+<div className="bg-base-200">
+<div className="max-w-[1170px] mx-auto px-4 md:px-24 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 py-12  text-base-content">
         <aside className="flex flex-col justify-center items-center">
         <img className=" w-[60px] h-60px " src="https://i.ibb.co/rZGbSFQ/deal.png" alt="deal" />
           <span className=' text-xl font-bold tracking-wide text-gray-800 '>
@@ -34,6 +34,8 @@ const Footer = () => {
           <a className="link link-hover">Cookie policy</a>
         </nav>
       </div>
+</div>
+      
       <div className="bg-gray-200 py-4">
         <div className="container mx-auto">
           <div className="text-center">
