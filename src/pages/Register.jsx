@@ -109,7 +109,7 @@ const Register = () => {
 				</div>
 				<div className="space-y-2">
 					<div>
-						<button type="submit" className="w-full px-8 py-3 font-semibold rounded-md dark:bg-violet-600 dark:text-gray-50">Sign in</button>
+						<button type="submit" className="w-full px-8 py-3 font-semibold rounded-md dark:bg-violet-600 dark:text-gray-50">Sign up</button>
 					</div>
 					<p className="px-6 text-sm text-center text-gray-600">Don{`'`}t have an account yet?
 						<Link to='/login' rel="noopener noreferrer" href="#" className="hover:underline dark:text-violet-600">Sign in</Link>.
